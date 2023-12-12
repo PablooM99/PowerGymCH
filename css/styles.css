@@ -1,0 +1,170 @@
+/* fuentes para la pagina */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap');
+/* font-family: 'Libre Baskerville', serif; */
+
+
+/*Estilos generales*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Libre Baskerville', serif;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #FFF;
+}
+/*Estilos para el boton de WPP*/
+.float{
+	position:fixed;
+	width:60px;
+	height:60px;
+	bottom:40px;
+	right:40px;
+	background-color:#25d366;
+	color:#FFF;
+	border-radius:50px;
+	text-align:center;
+  font-size:30px;
+	box-shadow: 2px 2px 3px #999;
+  z-index:100;
+}
+
+.my-float{
+	margin-top:16px;
+}
+
+/* Estilos para el NAV*/
+
+nav {
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    box-shadow: 0px 8px 16px rgba(0,0,0,.1);
+    position: fixed;
+    top: 0;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    color: black;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    top: 0;
+}
+nav ul li {
+    list-style: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+}
+nav ul li a {
+    text-decoration: none;
+    margin: 0 1rem;
+    color: black;
+}
+nav ul li a:hover {
+    transform: scale(1.1);
+    color: lightblue;
+    border-bottom: 2px solid lightblue;
+}
+
+/*Estilos para los titulos*/
+
+h1 {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 200px;
+    text-decoration: underline;
+}
+
+/* Estilos para el index */
+
+/*Estilos para las imagen de fondo y los parrafos*/
+.indeximg {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.container_index {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    margin-bottom: 100px;
+}
+
+.presentacion {
+width: 400px;
+text-align: center;
+flex: 0 0 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-bottom: 7rem;
+}
+
+/* Estilos para html Salon */
+
+.containerSalon {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    /* background-color: gray; */
+    justify-content: space-around;
+}
+.salonItem {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    /* background-color: #25d366; */
+}
+.h2Salon {
+    margin-bottom: 50px;
+}
+.salonItemVideo {
+    width: 80%;
+    text-align: center;
+}
+.salonItem img{
+    width: 300px;
+    margin: auto;
+    margin-top: 30px;
+}
+
+.salonItem p {
+    font-size: 18px;
+    line-height: 26px;
+    color: #9b9b9b;
+    width: 300px;
+    margin: 20px auto;
+}
+
+/* estilos del footer */
+footer {
+    background-color: lightblue;
+    padding: 50px 0;
+    z-index: 10;
+    display: block;
+    text-align: center;
+}
+.redes {
+    font-size: 18px;
+    list-style: none;
+    display: flex;
+}
+.redes img {
+    width: 4rem;
+}
+.copy {
+    font-size: 16px;
+    margin-left: auto;
+}
