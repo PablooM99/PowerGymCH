@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <title>Power GYM</title>
 </head>
@@ -13,7 +12,8 @@
     
     <header>
         <nav>
-            <ul>
+            <button id="nav-toggle" class="nav-toggle">&#9776;</button> <!-- Botón de hamburguesa -->
+            <ul id="nav-menu" class="nav-menu">
                 <li><a href="index.html">INICIO</a></li>
                 <li><a href="pages/salon.html">SALÓN</a></li>
                 <li><a href="pages/packs.html">PACKS</a></li>
@@ -25,7 +25,7 @@
     
     <main>
 
-        <h1>POWER GYM - EL MEJOR GYM DE LA CIUDAD</h1>
+        <h1 class="text-center">POWER GYM - EL MEJOR GYM DE LA CIUDAD</h1>
 
         <section class="container_index">
 
@@ -71,7 +71,7 @@
     <i class="fa fa-whatsapp my-float"></i>
     </a>
 
-
+    <script src="JS/script.js"></script>
     <footer>
         <div class="redes">
             <a href="https://facebook.com" target="_blank"><img src="media/redes/facebook-logo.png" alt=""></a>

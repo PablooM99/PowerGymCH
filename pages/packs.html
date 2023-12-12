@@ -5,15 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Power GYM</title>
 </head>
 <body>
     
     <header>
         <nav>
-            <ul>
+            <button id="nav-toggle" class="nav-toggle">&#9776;</button> <!-- Botón de hamburguesa -->
+            <ul id="nav-menu" class="nav-menu">
                 <li><a href="../index.html">INICIO</a></li>
                 <li><a href="salon.html">SALÓN</a></li>
                 <li><a href="packs.html">PACKS</a></li>
@@ -24,53 +25,66 @@
     </header>
     
     <main>
-
-        <h1>PAQUETES A CONTRATAR</h1>
-
-        <section class="container">
-
-            <div>
-                <h2>PACK</h2>
-                <img src="" alt="">
-                <p>
-
-                </p>
-                <p class="precio">
-
-                </p>
+        <h1 class="text-center">PAQUETES A CONTRATAR</h1>
+    
+        <section class="container packs">
+            <div class="row">
+                <!-- Pack 1 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">PACK 1</h2>
+                            <p class="card-text text-center">
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Impedit non eaque fugit, deserunt atque quod cumque praesentium reprehenderit dignissimos mollitia quasi repudiandae. Sint, ipsa consequatur explicabo odio consequuntur fuga alias.
+                            </p>
+                            <p class="precio text-center">
+                                $5000
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Pack 2 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">PACK 2</h2>
+                            <p class="card-text text-center">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam magnam architecto ab minus adipisci, eligendi natus? Minima velit error, accusamus saepe mollitia vel non sapiente placeat, unde culpa totam quas.
+                            </p>
+                            <p class="precio text-center">
+                                $7500
+                            </p>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Pack 3 -->
+                <div class="col-md-4">
+                    <div class="card">
+                        <img src="" alt="" class="card-img-top">
+                        <div class="card-body">
+                            <h2 class="card-title text-center">PACK 3</h2>
+                            <p class="card-text text-center">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima, exercitationem quisquam molestiae a quidem tempora consectetur enim excepturi eligendi iste amet rem quis soluta. Dolorem impedit quam aliquid placeat nostrum.
+                            </p>
+                            <p class="precio text-center">
+                                $10000
+                            </p>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div>
-                <h2>PACK</h2>
-                <img src="" alt="">
-                <p>
-
-                </p>
-                <p class="precio">
-
-                </p>
-            </div>
-
-            <div>
-                <h2>PACK</h2>
-                <img src="" alt="">
-                <p>
-
-                </p>
-                <p class="precio">
-
-                </p>
-            </div>
-
-
         </section>
-
     </main>
+    
 
     <a href="https://api.whatsapp.com/send?phone=51955081075&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Varela%202." class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
         </a>
-
+        <script src="../JS/script.js"></script>
     <footer>
         <div class="redes">
             <a href="https://facebook.com" target="_blank"><img src="../media/redes/facebook-logo.png" alt=""></a>
