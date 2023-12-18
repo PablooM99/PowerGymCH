@@ -231,7 +231,7 @@ margin-bottom: 7rem;
 }
 
 /* Estilos para la sección de insumos */
-.container {
+.container-menu {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 20px;
@@ -239,14 +239,14 @@ margin-bottom: 7rem;
     align-items: start;
 }
 
-.container div {
+.container-menu div {
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
     background-color: #f9f9f9;
 }
 
-.container img {
+.container-menu img {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
@@ -264,11 +264,21 @@ footer {
     font-size: 18px;
     list-style: none;
     display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
 }
 .redes img {
-    width: 4rem;
+    width: 2rem;
+    margin-right: 4rem;
 }
 .copy {
     font-size: 16px;
     margin-left: auto;
+}
+
+.Creador {
+    color: #ff4500;
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 1.2em;
 }
