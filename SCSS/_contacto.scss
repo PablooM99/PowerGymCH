@@ -1,0 +1,159 @@
+/* Estilos para la sección de contacto */
+
+.contacto {
+    text-align: center;
+  
+    // Ajustes para responsividad
+    @media screen and (max-width: 768px) {
+      margin-top: 50px;
+    }
+  
+    // Ajustes adicionales para pantallas aún más pequeñas
+    @media screen and (max-width: 480px) {
+      margin-top: 30px;
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 550px;
+    padding: 20px;
+    border-radius: 20px;
+    position: relative;
+    background-color: #1a1a1a;
+    color: #fff;
+    border: 1px solid #333;
+    margin: auto; 
+    margin-top: 20vh;
+    margin-bottom: 15vh;
+  
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: -1px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      padding-left: 30px;
+      color: #00bfff;
+  
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        border-radius: 50%;
+        left: 0px;
+        background-color: #00bfff;
+      }
+  
+      &::before {
+        width: 18px;
+        height: 18px;
+      }
+  
+      &::after {
+        width: 18px;
+        height: 18px;
+        animation: pulse 1s linear infinite;
+      }
+    }
+  
+    .message, 
+    .signin {
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, 0.7);
+  
+      &.signin {
+        text-align: center;
+  
+        a:hover {
+          text-decoration: underline royalblue;
+        }
+  
+        a {
+          color: #00bfff;
+        }
+      }
+    }
+  
+    .flex {
+      display: flex;
+      width: 100%;
+      gap: 6px;
+    }
+  
+    label {
+      position: relative;
+  
+
+        .input, textarea {
+          background-color: #333;
+          color: #fff;
+          width: 100%;
+          padding: 20px 05px 05px 10px;
+          outline: 0;
+          border: 1px solid rgba(105, 105, 105, 0.397);
+          border-radius: 10px;
+          resize: none; // Evita que se pueda redimensionar con el mouse
+    
+  
+        + span {
+          color: rgba(255, 255, 255, 0.5);
+          position: absolute;
+          left: 10px;
+          top: 0px;
+          font-size: 0.9em;
+          cursor: text;
+          transition: 0.3s ease;
+        }
+  
+        &:placeholder-shown + span {
+          top: 12.5px;
+          font-size: 0.9em;
+        }
+  
+        &:focus + span,
+        &:valid + span {
+          color: #00bfff;
+          top: 0px;
+          font-size: 0.7em;
+          font-weight: 600;
+        }
+      }
+    }
+  
+    .input {
+      font-size: medium;
+    }
+  
+    .submit {
+      border: none;
+      outline: none;
+      padding: 10px;
+      border-radius: 10px;
+      color: #fff;
+      font-size: 16px;
+      transform: .3s ease;
+      background-color: #00bfff;
+  
+      &:hover {
+        background-color: #00bfff96;
+      }
+    }
+  
+    @keyframes pulse {
+      from {
+        transform: scale(0.9);
+        opacity: 1;
+      }
+  
+      to {
+        transform: scale(1.8);
+        opacity: 0;
+      }
+    }
+  }
+  

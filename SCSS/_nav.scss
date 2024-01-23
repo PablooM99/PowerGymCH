@@ -1,0 +1,82 @@
+/* Estilos para el botón de hamburguesa */
+.nav-toggle {
+  display: none;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+
+/* Estilos para el menú en dispositivos móviles */
+@media screen and (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+    z-index: 20000;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: white;
+    width: 100%;
+    top: 50px;
+    left: 0;
+    box-shadow: 0px 8px 16px rgba(0,0,0,.1);
+    z-index: 20050;
+
+    li {
+      margin: 0;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
+}
+
+// Estilos para la barra de navegación
+
+nav {
+  width: 100%;
+  height: 50px;
+  background-color: $color-fondo;
+  box-shadow: 0px 8px 16px $color-sombra;
+  position: fixed;
+  top: 0;
+
+  ul {
+    @include flex-center;
+    justify-content: space-around;
+    list-style: none;
+    color: $color-texto;
+    text-decoration: none;
+    align-items: center;
+    text-align: center;
+    margin-top: 1rem;
+    top: 0;
+
+    li {
+      list-style: none;
+      color: $color-texto;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+
+      a {
+        text-decoration: none;
+        margin: 0 1rem;
+        color: $color-texto;
+
+        &:hover {
+          transform: scale(1.1);
+          color: $color-hover;
+          border-bottom: 2px solid $color-hover;
+        }
+      }
+    }
+  }
+}
+
+/* Agrega estilos para el botón de hamburguesa y menú móvil según sea necesario */

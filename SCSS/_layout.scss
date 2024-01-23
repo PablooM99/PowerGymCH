@@ -1,0 +1,22 @@
+// Estilos de diseño y estructura
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: $fuente-principal;
+  }
+  
+  body {
+    background-color: $color-fondo;
+  }
+  
+  .main-content {
+    z-index: 1000;
+  }
+  
+  .container {
+    @include flex-center;
+    flex-wrap: wrap;
+  }
+  

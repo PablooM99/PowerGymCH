@@ -1,0 +1,14 @@
+/* Estilos para Packs */
+
+.packs {
+  
+    // Ajustes para responsividad
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  }
+  
+  .card{
+    margin-bottom: 20px;
+    margin-top: 230px;
+  }

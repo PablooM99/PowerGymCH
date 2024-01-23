@@ -1,0 +1,16 @@
+// Importar variables y configuraciones generales
+@import 'variables';
+@import 'mixins';
+@import 'layout';
+
+// Importar secciones específicas del diseño
+@import 'botones';
+@import 'nav';
+
+// Otras importaciones...
+@import 'footer';
+@import 'index';
+@import 'salon';
+@import 'insumos';
+@import 'packs';
+@import 'contacto';
