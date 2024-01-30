@@ -39,7 +39,6 @@ body {
   margin-top: 16px;
 }
 
-/* Agrega estilos para otros botones según sea necesario */
 /* Estilos para el botón de hamburguesa */
 .nav-toggle {
   display: none;
@@ -159,7 +158,8 @@ footer .Creador {
   align-items: stretch;
   margin-bottom: 100px;
 }
-.container_index .presentacion {
+
+.presentacion {
   width: 400px;
   text-align: center;
   flex: 0 0 50%;
@@ -167,31 +167,37 @@ footer .Creador {
   align-items: center;
   justify-content: center;
   margin-bottom: 7rem;
+  /* Ajustes para responsividad */
 }
 @media screen and (max-width: 768px) {
-  .container_index .presentacion {
+  .presentacion {
     flex-direction: column;
     text-align: center;
     width: 100%;
     margin-bottom: 2rem;
   }
 }
-.container_index .presentacion .indeximg {
+.presentacion .indeximg {
   width: 50%;
   height: auto;
-  margin: 100px auto 1rem;
+  margin: 1rem auto; /* Centrar las imágenes */
+  /* Ajustes adicionales para pantallas aún más pequeñas */
 }
 @media screen and (max-width: 480px) {
-  .container_index .presentacion .indeximg {
+  .presentacion .indeximg {
     width: 70%;
   }
 }
-.container_index .presentacion h1 {
-  margin-top: 80px;
+.presentacion p {
+  margin-bottom: 1rem;
+}
+.presentacion h1 {
+  margin-top: 1rem;
   font-size: 2em;
+  /* Ajustes adicionales para pantallas aún más pequeñas */
 }
 @media screen and (max-width: 480px) {
-  .container_index .presentacion h1 {
+  .presentacion h1 {
     font-size: 1.5rem;
   }
 }
@@ -287,9 +293,13 @@ h1 {
   }
 }
 
+.packs-title {
+  margin-top: 2em;
+}
+
 .card {
   margin-bottom: 20px;
-  margin-top: 230px;
+  margin-top: 3em;
 }
 
 /* Estilos para la sección de contacto */
@@ -315,12 +325,12 @@ h1 {
   padding: 20px;
   border-radius: 20px;
   position: relative;
-  background-color: #1a1a1a;
+  background-color: #f3ecec;
   color: #fff;
-  border: 1px solid #333;
+  border: 1px solid #000000;
   margin: auto;
-  margin-top: 20vh;
-  margin-bottom: 15vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 .form .title {
   font-size: 28px;
@@ -330,7 +340,7 @@ h1 {
   display: flex;
   align-items: center;
   padding-left: 30px;
-  color: #00bfff;
+  color: #44878f;
 }
 .form .title::before, .form .title::after {
   position: absolute;
@@ -339,7 +349,7 @@ h1 {
   width: 16px;
   border-radius: 50%;
   left: 0px;
-  background-color: #00bfff;
+  background-color: #44878f;
 }
 .form .title::before {
   width: 18px;
@@ -353,7 +363,7 @@ h1 {
 .form .message,
 .form .signin {
   font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(0, 0, 0, 0.7);
 }
 .form .message.signin,
 .form .signin.signin {
@@ -376,8 +386,8 @@ h1 {
   position: relative;
 }
 .form label .input, .form label textarea {
-  background-color: #333;
-  color: #fff;
+  background-color: #ffffff;
+  color: #000000;
   width: 100%;
   padding: 20px 5px 5px 10px;
   outline: 0;
@@ -386,7 +396,7 @@ h1 {
   resize: none;
 }
 .form label .input + span, .form label textarea + span {
-  color: rgba(255, 255, 255, 0.5);
+  color: rgba(0, 0, 0, 0.5);
   position: absolute;
   left: 10px;
   top: 0px;
@@ -399,7 +409,7 @@ h1 {
   font-size: 0.9em;
 }
 .form label .input:focus + span, .form label .input:valid + span, .form label textarea:focus + span, .form label textarea:valid + span {
-  color: #00bfff;
+  color: #44878f;
   top: 0px;
   font-size: 0.7em;
   font-weight: 600;
@@ -415,10 +425,10 @@ h1 {
   color: #fff;
   font-size: 16px;
   transform: 0.3s ease;
-  background-color: #00bfff;
+  background-color: #44878f;
 }
 .form .submit:hover {
-  background-color: rgba(0, 191, 255, 0.5882352941);
+  background-color: #44878f;
 }
 @keyframes pulse {
   from {
@@ -429,6 +439,16 @@ h1 {
     transform: scale(1.8);
     opacity: 0;
   }
+}
+
+.container-maps {
+  width: 100%;
+}
+.container-maps .ubicacion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 /*# sourceMappingURL=styles.css.map */
