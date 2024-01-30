@@ -195,7 +195,7 @@ footer .Creador {
 .presentacion .indeximg {
   width: 50%;
   height: auto;
-  margin: 1rem auto; /* Centrar las imágenes */
+  margin: 1rem auto;
 }
 .presentacion p {
   margin-bottom: 1rem;
