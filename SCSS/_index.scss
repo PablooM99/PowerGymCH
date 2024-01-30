@@ -12,6 +12,8 @@
   flex-wrap: wrap;
   align-items: stretch;
   margin-bottom: 100px;
+  align-items: center;
+  justify-content: center;
 
   /* Ajustes para responsividad */
   @media screen and (max-width: 768px) {

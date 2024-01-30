@@ -4,7 +4,6 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Libre Baskerville", serif;
-  font-display: swap;
 }
 
 body {
@@ -158,6 +157,8 @@ footer .Creador {
   flex-wrap: wrap;
   align-items: stretch;
   margin-bottom: 100px;
+  align-items: center;
+  justify-content: center;
   /* Ajustes para responsividad */
   /* Ajustes adicionales para pantallas aún más pequeñas */
   /* Ajustes adicionales para pantallas aún más pequeñas */
