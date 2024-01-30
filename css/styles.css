@@ -157,6 +157,29 @@ footer .Creador {
   flex-wrap: wrap;
   align-items: stretch;
   margin-bottom: 100px;
+  /* Ajustes para responsividad */
+  /* Ajustes adicionales para pantallas aún más pequeñas */
+  /* Ajustes adicionales para pantallas aún más pequeñas */
+}
+@media screen and (max-width: 768px) {
+  .container_index {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container_index {
+    width: 70%;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 480px) {
+  .container_index {
+    font-size: 1.5rem;
+    flex-direction: column;
+  }
 }
 
 .presentacion {
@@ -167,26 +190,12 @@ footer .Creador {
   align-items: center;
   justify-content: center;
   margin-bottom: 7rem;
-  /* Ajustes para responsividad */
-}
-@media screen and (max-width: 768px) {
-  .presentacion {
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    margin-bottom: 2rem;
-  }
+  flex-direction: column;
 }
 .presentacion .indeximg {
   width: 50%;
   height: auto;
   margin: 1rem auto; /* Centrar las imágenes */
-  /* Ajustes adicionales para pantallas aún más pequeñas */
-}
-@media screen and (max-width: 480px) {
-  .presentacion .indeximg {
-    width: 70%;
-  }
 }
 .presentacion p {
   margin-bottom: 1rem;
@@ -194,12 +203,6 @@ footer .Creador {
 .presentacion h1 {
   margin-top: 1rem;
   font-size: 2em;
-  /* Ajustes adicionales para pantallas aún más pequeñas */
-}
-@media screen and (max-width: 480px) {
-  .presentacion h1 {
-    font-size: 1.5rem;
-  }
 }
 
 /* Estilos para html Salon */
