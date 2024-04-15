@@ -113,5 +113,4 @@ function updateCartDetails() {
     const cartDetails = document.getElementById('cart-details');
     const cartTotal = document.getElementById('cart-total');
 
-    // Aquí iría la lógica para llenar los detalles del carrito y calcular el total
 }
