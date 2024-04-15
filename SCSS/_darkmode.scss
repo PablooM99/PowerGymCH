@@ -1,0 +1,41 @@
+// estilos para el modo oscuro
+
+.dark-mode {
+  background-color: #343a40;
+  color: #ffffff;
+
+  .container-menu div {
+    background-color: #333; // Fondo oscuro para las tarjetas de menú
+    color: #fff; // Texto blanco para mejor legibilidad
+
+    p, a {
+      color: #ecf0f1; // Asegurarse que el texto y enlaces son visibles
+    }}
+
+  nav,
+  footer {
+    background-color: #34495e;
+  }
+
+  .card {
+    background-color: #333;
+    color: #fff;
+
+    .card-title,
+    .card-text {
+      color: #ffffff;
+    }
+  }
+
+  .nav-menu li a {
+    color: #ecf0f1;
+  }
+
+  .presentacion p {
+    color: #bdc3c7;
+  }
+}
+
+.dark-mode-toggle {
+  cursor: pointer;
+}

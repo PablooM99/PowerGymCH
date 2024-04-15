@@ -7,7 +7,6 @@
     <meta name="description" content="Aqui tenemos el menu completo de nuestro buffet, comidas sanas para acompañar tu entrenamiento.">
     <meta name="keywords" content="fitness, gymnasio, dieta, entrenamiento, disciplina, constancia, salud, ejercicios, entrenador personal, personal trainer, rutinas de ejercicio, bienestar, nutrición, salud mental, salud fisica">
     <link rel="stylesheet" href="../css/styles.css">
-    <script src="../script.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link
     rel="stylesheet"
@@ -26,6 +25,15 @@
                 <li><a href="packs.html">PACKS</a></li>
                 <li><a href="menu.html">MENU</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
+                <div id="shopping-cart" class="shopping-cart">
+                    <button class="btn btn-primary">
+                        <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
+                    </button>
+                    <ul id="cart-items">
+                    
+                    </ul>
+                </div> 
+                <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
             </ul>
         </nav>
     </header>
@@ -41,6 +49,8 @@
                 <p>
                     Precio: $3500
                 </p>
+                <input type="number" value="1" min="1" class="item-quantity">
+                <button class="add-to-cart" data-name="Arroz con pescado y verduras" data-price="3500">Agregar al carrito</button>
             </div>
 
             <div>
@@ -49,6 +59,8 @@
                 <p>
                     Precio: $1500
                 </p>
+                <input type="number" value="1" min="1" class="item-quantity">
+                <button class="add-to-cart" data-name="Ensalada mixta" data-price="1500">Agregar al carrito</button>
             </div>
 
             <div>
@@ -57,6 +69,8 @@
                 <p>
                     Precio: $2100
                 </p>
+                <input type="number" value="1" min="1" class="item-quantity">
+                <button class="add-to-cart" data-name="Ensalada Cesar" data-price="2100">Agregar al carrito</button>
             </div>
 
             <div>
@@ -65,6 +79,8 @@
                 <p>
                     Precio: $1300
                 </p>
+                <input type="number" value="1" min="1" class="item-quantity">
+                <button class="add-to-cart" data-name="Omelette" data-price="1300">Agregar al carrito</button>
             </div>
 
             <div>
@@ -73,6 +89,8 @@
                 <p>
                     Precio: $3600
                 </p>
+                <input type="number" value="1" min="1" class="item-quantity">
+                <button class="add-to-cart" data-name="Pollo a la plancha con verduras" data-price="3600">Agregar al carrito</button>
             </div>
 
             <div>
@@ -81,6 +99,8 @@
                 <p>
                     Precio: $1000 porción
                 </p>
+                <input type="number" value="1" min="1" class="item-quantity">
+                <button class="add-to-cart" data-name="Porción tarta de acelga" data-price="1000">Agregar al carrito</button>
             </div>
 
         </section>
@@ -90,6 +110,8 @@
         <i class="fa fa-whatsapp my-float"></i>
         </a>
         <script src="../JS/script.js"></script>
+        
+    <script src="../JS/script.js" defer></script>
     <footer>
         <div class="redes">
             <a href="https://www.facebook.com/people/Power-Gym/100035244853335/" target="_blank"><img src="../media/redes/facebook-logo.png" alt=""></a>
