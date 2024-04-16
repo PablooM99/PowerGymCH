@@ -35,6 +35,18 @@
             </ul>
         </nav>
     </header>
+
+    <div id="cart-modal" class="cart-modal" style="display:none;">
+        <div class="cart-content">
+            <button class="close-btn" onclick="toggleCartModal()">Cerrar</button>
+            <h3>Detalles del Carrito</h3>
+            <ul id="modal-cart-items">
+                
+            </ul>
+            <p class="cart-total">Total: <span id="modal-cart-total">0</span></p>
+            <button onclick="checkoutCart()">Checkout</button>
+        </div>
+    </div>
     
     <main>
         <h1 class="packs-title">PAQUETES A CONTRATAR</h1>

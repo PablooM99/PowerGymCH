@@ -29,15 +29,27 @@
                     <button class="btn btn-primary">
                         <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
                     </button>
-                    <ul id="cart-items">
-                    
-                    </ul>
-                </div> 
+                </div>
                 <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
             </ul>
         </nav>
     </header>
     
+
+<div id="cart-modal" class="cart-modal" style="display:none;">
+    <div class="cart-content">
+        <button class="close-btn" onclick="toggleCartModal()">Cerrar</button>
+        <h3>Detalles del Carrito</h3>
+        <ul id="modal-cart-items">
+            
+        </ul>
+        <p class="cart-total">Total: <span id="modal-cart-total">0</span></p>
+        <button onclick="checkoutCart()">Checkout</button>
+    </div>
+</div>
+
+
+
     <main>
 
         <h1 class="">INSUMOS A LA VENTA</h1>
@@ -109,9 +121,7 @@
     <a href="https://api.whatsapp.com/send?phone=2236153877&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20local."class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
         </a>
-        <script src="../JS/script.js"></script>
-        
-    <script src="../JS/script.js" defer></script>
+        <script src="../JS/script.js" defer></script>
     <footer>
         <div class="redes">
             <a href="https://www.facebook.com/people/Power-Gym/100035244853335/" target="_blank"><img src="../media/redes/facebook-logo.png" alt=""></a>

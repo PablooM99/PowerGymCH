@@ -3,11 +3,9 @@
 .shopping-cart {
     position: fixed;
     right: 20px;
-    top: 20px;
+    top: 10px;
     color: #FFF;
-    background-color: #25d366;
-    padding: 10px;
-    border-radius: 50%;
+    background-color: white;
     font-size: 24px;
   
     #cart-count {
@@ -21,7 +19,82 @@
     } 
   }
   .item-quantity {
-    width: 60px; /* Ajusta automáticamente el ancho al contenido */
-    padding: 0 5px; /* Agrega un poco de padding a los lados */
-    text-align: center; /* Centra el número */
+    width: 60px;
+    padding: 0 5px;
+    text-align: center;
 }
+
+// Estilo para el modal del carrito
+
+.cart-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: rgb(247, 247, 247);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1002;
+}
+
+.cart-content {
+  background: rgb(24, 118, 226);
+  padding: 20px;
+  border-radius: 10px;
+  width: auto;
+  max-width: 600px;
+  max-height: 80%;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+
+.close-btn {
+  align-self: flex-end;
+  padding: 5px 15px;
+  cursor: pointer;
+  border: none;
+  background-color: #ff0000;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  border-radius: 5px;
+}
+
+ul#modal-cart-items {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+  width: 100%;
+}
+
+ul#modal-cart-items li {
+  background: #120ee6;
+  padding: 10px;
+  margin-bottom: 8px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+button.remove-btn {
+  padding: 5px 10px;
+  background-color: #ff0505;
+  color: rgb(255, 0, 0);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button.remove-btn:hover {
+  background-color: #c0392b;
+}
+
+.cart-total {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+
