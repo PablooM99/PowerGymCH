@@ -5,11 +5,11 @@
   color: #ffffff;
 
   .container-menu div {
-    background-color: #333; // Fondo oscuro para las tarjetas de menú
-    color: #fff; // Texto blanco para mejor legibilidad
+    background-color: #333;
+    color: #fff; 
 
     p, a {
-      color: #ecf0f1; // Asegurarse que el texto y enlaces son visibles
+      color: #ecf0f1;
     }}
 
   nav,
@@ -48,9 +48,31 @@
     background: #34495e;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
+  nav {
+    background-color: #34495e;
+
+    @media (max-width: 768px) {
+      .nav-menu {
+        background-color: #34495e;
+      }
+    }
+  }
 }
 
+
+
 .dark-mode-toggle {
-  cursor: pointer;
-  margin-right: 100px;
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  margin-right: 0;
+  display: inline-block;
+  box-shadow: none;
+
+  &:hover {
+      background-color: #666;
+  }
 }
+

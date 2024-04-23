@@ -25,12 +25,16 @@
                 <li><a href="pages/packs.html">PACKS</a></li>
                 <li><a href="pages/menu.html">MENU</a></li>
                 <li><a href="pages/contacto.html">CONTACTO</a></li>
-                <div id="shopping-cart" class="shopping-cart">
-                    <button class="btn btn-primary">
-                        <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
-                    </button>
-                </div>                
-                <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
+                <li class="nav-item cart">        
+                    <div class="button-container">
+                        <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
+                        <div id="shopping-cart" class="shopping-cart">
+                          <button class="btn btn-primary">
+                            <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
+                          </button>
+                        </div>
+                      </div>
+                </li>
             </ul>
         </nav>
     </header>
@@ -43,7 +47,7 @@
                 
             </ul>
             <p class="cart-total">Total: <span id="modal-cart-total">0</span></p>
-            <button onclick="checkoutCart()">Checkout</button>
+            <button onclick="checkoutCart()">Comprar</button>
         </div>
     </div>
     

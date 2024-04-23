@@ -80,3 +80,60 @@ nav {
   }
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 5px;
+  right: 150px;
+  z-index: 100;
+
+  &:hover{
+    cursor: pointer;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .button-container {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+  
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-toggle {
+    display: block;
+  }
+  
+  .nav-toggle.active + .nav-menu {
+    display: flex;
+  }
+}
+
+.btn-primary{
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  box-shadow: none;
+
+  &:hover{
+    background-color: #666;
+    cursor: pointer;
+  }
+}

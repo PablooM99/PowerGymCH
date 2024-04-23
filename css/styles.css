@@ -114,6 +114,58 @@ nav ul li a:hover {
   border-bottom: 2px solid lightblue;
 }
 
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 5px;
+  right: 150px;
+  z-index: 100;
+}
+.button-container:hover {
+  cursor: pointer;
+}
+
+@media screen and (max-width: 768px) {
+  .button-container {
+    position: static;
+    display: block;
+    width: 100%;
+  }
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+  }
+  .nav-toggle {
+    display: block;
+  }
+  .nav-toggle.active + .nav-menu {
+    display: flex;
+  }
+}
+.btn-primary {
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  margin-right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  position: fixed;
+  top: 5px;
+  right: 10px;
+  box-shadow: none;
+}
+.btn-primary:hover {
+  background-color: #666;
+  cursor: pointer;
+}
+
 /* estilos del footer */
 footer {
   background-color: lightblue;
@@ -491,8 +543,7 @@ h1 {
   justify-content: center;
   z-index: 1002;
 }
-
-.cart-content {
+.cart-modal .cart-content {
   background: rgb(24, 118, 226);
   padding: 20px;
   border-radius: 10px;
@@ -503,6 +554,24 @@ h1 {
   display: flex;
   flex-direction: column;
   overflow: auto;
+}
+@media (max-width: 768px) {
+  .cart-modal .cart-content {
+    max-width: 80%;
+  }
+}
+@media (max-width: 480px) {
+  .cart-modal .cart-content {
+    max-width: 95%;
+    padding: 10px;
+    border-radius: 0;
+  }
+}
+@media (max-width: 480px) {
+  .cart-modal .remove-btn, .cart-modal .close-btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
 
 .close-btn {
@@ -515,6 +584,9 @@ h1 {
   font-weight: bold;
   border-radius: 5px;
 }
+.close-btn:hover {
+  background-color: #c0392b;
+}
 
 ul#modal-cart-items {
   list-style-type: none;
@@ -522,7 +594,6 @@ ul#modal-cart-items {
   margin: 20px 0;
   width: 100%;
 }
-
 ul#modal-cart-items li {
   background: #120ee6;
   padding: 10px;
@@ -531,6 +602,12 @@ ul#modal-cart-items li {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+@media (max-width: 480px) {
+  ul#modal-cart-items li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
 button.remove-btn {
@@ -541,7 +618,6 @@ button.remove-btn {
   border-radius: 5px;
   cursor: pointer;
 }
-
 button.remove-btn:hover {
   background-color: #c0392b;
 }
@@ -594,10 +670,27 @@ button.remove-btn:hover {
   background: #34495e;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+.dark-mode nav {
+  background-color: #34495e;
+}
+@media (max-width: 768px) {
+  .dark-mode nav .nav-menu {
+    background-color: #34495e;
+  }
+}
 
 .dark-mode-toggle {
-  cursor: pointer;
-  margin-right: 100px;
+  background-color: #444;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  margin-right: 0;
+  display: inline-block;
+  box-shadow: none;
+}
+.dark-mode-toggle:hover {
+  background-color: #666;
 }
 
 /*# sourceMappingURL=styles.css.map */

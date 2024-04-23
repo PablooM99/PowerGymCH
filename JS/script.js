@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
             const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'Remove';
+            removeBtn.textContent = 'Borrar';
             removeBtn.addEventListener('click', function() {
                 removeItemFromCart(index);
             });
