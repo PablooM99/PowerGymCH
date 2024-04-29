@@ -7,38 +7,52 @@ document.getElementById('nav-toggle').addEventListener('click', function() {
     }
 });
 
-// funciones para el modo oscuro
-
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const toggleButton = document.getElementById('dark-mode-toggle');
-  
-    // Cargar el tema desde localStorage
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme === 'dark') {
       body.classList.add('dark-mode');
     }
   
-    // Alternar el tema y almacenarlo en localStorage
     toggleButton.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
       localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
     });
-  });
-  
-// función para el carrito de compras
-document.addEventListener('DOMContentLoaded', () => {
-    updateCartCount();
+
     const cartButton = document.querySelector('.shopping-cart button');
-    if (cartButton) {
-        cartButton.addEventListener('click', function() {
-            toggleCartModal();
-        });
-    } else {
-        console.error('El botón del carrito no fue encontrado en el DOM');
-    }
+    cartButton.addEventListener('click', toggleCartModal);
+
+    const closeButton = document.querySelector('.close-btn');
+    closeButton.addEventListener('click', toggleCartModal);
+
+    generateProductList();
+    updateCartCount();
 });
 
+function generateProductList() {
+    const productos = [
+        { nombre: "Arroz con pescado y verduras", precio: 3500, imagen: "../media/menu/arrozconpescadoyverduras.jpg" },
+        { nombre: "Ensalada mixta", precio: 1500, imagen: "../media/menu/ensalada_mixta.jpg" },
+        { nombre: "Ensalada Cesar", precio: 2100, imagen: "../media/menu/ensaladaCesar.jpg" },
+        { nombre: "Omelette", precio: 1300, imagen: "../media/menu/omelette.jpg" },
+        { nombre: "Pollo a la plancha con verduras", precio: 3600, imagen: "../media/menu/pollo_con_verduras.jpg" },
+        { nombre: "Porción tarta de acelga", precio: 1000, imagen: "../media/menu/tartadeacelga.jpg" }
+    ];
+
+    const contenedorProductos = document.querySelector('.container-menu');
+    productos.forEach(producto => {
+        const productoHTML = `
+            <div>
+                <p>${producto.nombre}</p>
+                <img src="${producto.imagen}" alt="Foto de comida (${producto.nombre})">
+                <p>Precio: $${producto.precio}</p>
+                <input type="number" value="1" min="1" class="item-quantity">
+                <button class="add-to-cart" data-name="${producto.nombre}" data-price="${producto.precio}">Agregar al carrito</button>
+            </div>
+        `;
+        contenedorProductos.innerHTML += productoHTML;
+    });
 
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
@@ -46,72 +60,85 @@ document.addEventListener('DOMContentLoaded', () => {
             const price = parseFloat(button.getAttribute('data-price'));
             const quantity = parseInt(button.previousElementSibling.value);
             addItemToCart(name, price, quantity);
-            updateCartCount();
         });
     });
+}
 
-    function addItemToCart(name, price, quantity) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const existingItemIndex = cart.findIndex(item => item.name === name);
-        if (existingItemIndex > -1) {
-            cart[existingItemIndex].quantity += quantity;
-        } else {
-            cart.push({ name, price, quantity });
-        }
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateCartCount();
+function addItemToCart(name, price, quantity) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const existingItemIndex = cart.findIndex(item => item.name === name);
+    if (existingItemIndex > -1) {
+        cart[existingItemIndex].quantity += quantity;
+    } else {
+        cart.push({ name, price, quantity });
     }
-    
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateCartCount();
+    updateModalCartDetails();
+}
 
-    function updateCartCount() {
-        const cart = JSON.parse(localStorage.getItem('cart')) || [];
-        const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
-        document.getElementById('cart-count').textContent = totalCount;
-    }
+function updateCartCount() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
+    document.getElementById('cart-count').textContent = totalCount;
+}
 
-    function toggleCartModal() {
-        const modal = document.getElementById('cart-modal');
-        if (modal.style.display === 'block') {
-            modal.style.display = 'none';
-        } else {
-            modal.style.display = 'block';
-            updateModalCartDetails(); 
-        }
-    }
-    
-    
+function toggleCartModal() {
+    const modal = document.getElementById('cart-modal');
+    modal.style.display = (modal.style.display === 'block' ? 'none' : 'block');
+    updateModalCartDetails();
+}
 
-    function updateModalCartDetails() {
-        const modalItems = document.getElementById('modal-cart-items');
-        const modalTotal = document.getElementById('modal-cart-total');
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        let total = 0;
-    
-        modalItems.innerHTML = '';
-        cart.forEach((item, index) => {
-            const li = document.createElement('li');
-            li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
-            const removeBtn = document.createElement('button');
-            removeBtn.textContent = 'Borrar';
-            removeBtn.addEventListener('click', function() {
-                removeItemFromCart(index);
-            });
-            li.appendChild(removeBtn);
-            modalItems.appendChild(li);
-            total += item.price * item.quantity;
+function updateModalCartDetails() {
+    const modalItems = document.getElementById('modal-cart-items');
+    const modalTotal = document.getElementById('modal-cart-total');
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+
+    modalItems.innerHTML = '';
+    cart.forEach((item, index) => {
+        const li = document.createElement('li');
+        li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+        const removeBtn = document.createElement('button');
+        removeBtn.textContent = 'Borrar';
+        removeBtn.addEventListener('click', () => removeItemFromCart(index));
+        li.appendChild(removeBtn);
+        modalItems.appendChild(li);
+        total += item.price * item.quantity;
+    });
+
+    modalTotal.textContent = `$${total.toFixed(2)}`;
+}
+
+function removeItemFromCart(index) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    cart.splice(index, 1);
+    localStorage.setItem('cart', JSON.stringify(cart));
+    updateModalCartDetails();
+    updateCartCount();
+}
+
+document.getElementById('checkout-button').addEventListener('click', function() {
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+    if (cart.length === 0) {
+        Swal.fire({
+            title: 'Carrito Vacío',
+            text: 'No tienes ítems en el carrito',
+            icon: 'warning',
+            confirmButtonText: 'Cerrar'
         });
-    
-        modalTotal.textContent = `$${total.toFixed(2)}`;
+    } else {
+        Swal.fire({
+            title: '¡Compra completada!',
+            text: 'Tu compra ha sido completada exitosamente.',
+            icon: 'success',
+            confirmButtonText: 'Cerrar'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                localStorage.clear();
+                updateCartCount();
+                toggleCartModal();
+            }
+        });
     }
-    
-    function removeItemFromCart(index) {
-        let cart = JSON.parse(localStorage.getItem('cart')) || [];
-        cart.splice(index, 1);
-        localStorage.setItem('cart', JSON.stringify(cart));
-        updateModalCartDetails();
-        updateCartCount();
-    }
-    
-    function checkoutCart() {
-        console.log("Función de checkout aún no implementada.");
-    }
+});

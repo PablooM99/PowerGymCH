@@ -8,10 +8,7 @@
     <meta name="keywords" content="fitness, gymnasio, dieta, entrenamiento, disciplina, constancia, salud, ejercicios, entrenador personal, personal trainer, rutinas de ejercicio, bienestar, nutrición, salud mental, salud fisica">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
-  />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <title>Power GYM</title>
 </head>
 <body>
@@ -25,107 +22,41 @@
                 <li><a href="packs.html">PACKS</a></li>
                 <li><a href="menu.html">MENU</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
-                <li class="nav-item cart">        
-                    <div class="button-container">
-                        <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
-                        <div id="shopping-cart" class="shopping-cart">
-                          <button class="btn btn-primary">
-                            <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
-                          </button>
-                        </div>
-                      </div>
-                </li>
-            </ul>
+            </ul>                    
+            <div class="button-container">
+                <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
+                <div id="shopping-cart" class="shopping-cart">
+                  <button class="btn btn-primary">
+                    <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
+                  </button>
+                </div>
+            </div>
         </nav>
     </header>
-    
 
-<div id="cart-modal" class="cart-modal" style="display:none;">
-    <div class="cart-content">
-        <button class="close-btn" onclick="toggleCartModal()">Cerrar</button>
-        <h3>Detalles del Carrito</h3>
-        <ul id="modal-cart-items">
-            
-        </ul>
-        <p class="cart-total">Total: <span id="modal-cart-total">0</span></p>
-        <button onclick="checkoutCart()">Comprar</button>
+    <div id="cart-modal" class="cart-modal" style="display:none;">
+        <div class="cart-content">
+            <button class="close-btn">Cerrar</button>
+            <h3>Detalles del Carrito</h3>
+            <ul id="modal-cart-items">
+            </ul>
+            <p class="cart-total">Total: <span id="modal-cart-total">0</span></p>
+            <button id="checkout-button">Comprar</button>
+        </div>
     </div>
-</div>
-
-
 
     <main>
-
         <h1 class="">INSUMOS A LA VENTA</h1>
-
         <section class="container-menu">
-            <div>
-                <p>Arroz con pescado y verduras</p>
-                <img src="../media/menu/arrozconpescadoyverduras.jpg" alt="Foto de comida (arroz c/ pescado y verduras)">
-                <p>
-                    Precio: $3500
-                </p>
-                <input type="number" value="1" min="1" class="item-quantity">
-                <button class="add-to-cart" data-name="Arroz con pescado y verduras" data-price="3500">Agregar al carrito</button>
-            </div>
-
-            <div>
-                <p>Ensalada mixta</p>
-                <img src="../media/menu/ensalada_mixta.jpg" alt="Foto de comida (ensalada mixta)">
-                <p>
-                    Precio: $1500
-                </p>
-                <input type="number" value="1" min="1" class="item-quantity">
-                <button class="add-to-cart" data-name="Ensalada mixta" data-price="1500">Agregar al carrito</button>
-            </div>
-
-            <div>
-                <p>Ensalada Cesar</p>
-                <img src="../media/menu/ensaladaCesar.jpg" alt="Foto de comida (ensalada cesar)">
-                <p>
-                    Precio: $2100
-                </p>
-                <input type="number" value="1" min="1" class="item-quantity">
-                <button class="add-to-cart" data-name="Ensalada Cesar" data-price="2100">Agregar al carrito</button>
-            </div>
-
-            <div>
-                <p>Omelette</p>
-                <img src="../media/menu/omelette.jpg" alt="Foto de comida (Omelette)">
-                <p>
-                    Precio: $1300
-                </p>
-                <input type="number" value="1" min="1" class="item-quantity">
-                <button class="add-to-cart" data-name="Omelette" data-price="1300">Agregar al carrito</button>
-            </div>
-
-            <div>
-                <p>Pollo a la plancha con verduras</p>
-                <img src="../media/menu/pollo_con_verduras.jpg" alt="Foto de comida (pollo con verduras)">
-                <p>
-                    Precio: $3600
-                </p>
-                <input type="number" value="1" min="1" class="item-quantity">
-                <button class="add-to-cart" data-name="Pollo a la plancha con verduras" data-price="3600">Agregar al carrito</button>
-            </div>
-
-            <div>
-                <p>Porción tarta de acelga</p>
-                <img src="../media/menu/tartadeacelga.jpg" alt="Foto de comida (tarta de acelga)">
-                <p>
-                    Precio: $1000 porción
-                </p>
-                <input type="number" value="1" min="1" class="item-quantity">
-                <button class="add-to-cart" data-name="Porción tarta de acelga" data-price="1000">Agregar al carrito</button>
-            </div>
-
+            
         </section>
     </main>
 
     <a href="https://api.whatsapp.com/send?phone=2236153877&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20tu%20local."class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
-        </a>
-        <script src="../JS/script.js" defer></script>
+    </a>
+    <script src="../JS/script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <footer>
         <div class="redes">
             <a href="https://www.facebook.com/people/Power-Gym/100035244853335/" target="_blank"><img src="../media/redes/facebook-logo.png" alt=""></a>

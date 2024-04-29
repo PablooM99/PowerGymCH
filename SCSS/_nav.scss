@@ -84,11 +84,14 @@ nav {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 10px;
-  position: fixed;
+  gap: 5px;
+  margin-left: auto;
+  padding-right: 5px;
+  z-index: 3;
+  position: absolute;
   top: 5px;
-  right: 150px;
-  z-index: 100;
+  right: 10px;
+  flex-direction: column;
 
   &:hover{
     cursor: pointer;
@@ -97,15 +100,18 @@ nav {
 
 @media screen and (max-width: 768px) {
   .button-container {
-    position: static;
-    display: block;
-    width: 100%;
+    position: absolute;
+    right: auto;
+    top: 10px;
+    left: 10px;
+    justify-content: flex-end;
   }
   
   .nav-menu {
     display: none;
     flex-direction: column;
     align-items: center;
+    z-index: 1;
   }
   
   .nav-toggle {
@@ -115,25 +121,65 @@ nav {
   .nav-toggle.active + .nav-menu {
     display: flex;
   }
+
+  #nav-toggle {
+    z-index: 4;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .button-container {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+  }
+
+  .dark-mode-toggle, .btn-primary {
+    width: auto;
+    margin: 0;
+  }
+
+  .dark-mode-toggle {
+    padding: 10px 20px;
+    font-size: 0.5rem;
+  }
+
+  .btn-primary {
+    padding: 10px 20px;
+    font-size: 0.5rem;
+  }
+
+  .btn-primary span {
+    margin-left: 5px;
+  }
+
+  .shopping-cart .btn-primary {
+    padding-right: 1px;
+    top: 10px;
+  }
 }
 
 .btn-primary{
   background-color: #444;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
   margin-right: 0;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   gap: 10px;
-  position: fixed;
   top: 5px;
   right: 10px;
   box-shadow: none;
+  font-size: 0.8rem;
 
   &:hover{
     background-color: #666;
     cursor: pointer;
   }
 }
+

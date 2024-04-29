@@ -64,12 +64,13 @@
 .dark-mode-toggle {
   background-color: #444;
   color: white;
-  padding: 10px 20px;
+  padding: 5px 10px;
   border: none;
   outline: none;
   margin-right: 0;
   display: inline-block;
   box-shadow: none;
+  font-size: 0.8rem;
 
   &:hover {
       background-color: #666;

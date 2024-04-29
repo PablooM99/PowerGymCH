@@ -26,29 +26,27 @@
                 <li><a href="packs.html">PACKS</a></li>
                 <li><a href="menu.html">MENU</a></li>
                 <li><a href="contacto.html">CONTACTO</a></li>
-                <li class="nav-item cart">        
-                    <div class="button-container">
-                        <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
-                        <div id="shopping-cart" class="shopping-cart">
-                          <button class="btn btn-primary">
-                            <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
-                          </button>
-                        </div>
-                      </div>
-                </li>
-            </ul>
+            </ul>       
+            <div class="button-container">
+                <button id="dark-mode-toggle" class="dark-mode-toggle">Modo Oscuro</button>
+                <div id="shopping-cart" class="shopping-cart">
+                  <button class="btn btn-primary">
+                    <i class="fa fa-shopping-cart"></i> Carrito <span id="cart-count">0</span>
+                  </button>
+                </div>
+            </div>  
         </nav>
     </header>
 
     <div id="cart-modal" class="cart-modal" style="display:none;">
         <div class="cart-content">
-            <button class="close-btn" onclick="toggleCartModal()">Cerrar</button>
+            <button class="close-btn">Cerrar</button>
             <h3>Detalles del Carrito</h3>
             <ul id="modal-cart-items">
                 
             </ul>
             <p class="cart-total">Total: <span id="modal-cart-total">0</span></p>
-            <button onclick="checkoutCart()">Comprar</button>
+            <button id="checkout-button">Comprar</button>
         </div>
     </div>
     
