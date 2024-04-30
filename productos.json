@@ -1,0 +1,32 @@
+[
+    {
+        "nombre": "Arroz con pescado y verduras",
+        "precio": 3500,
+        "imagen": "../media/menu/arrozconpescadoyverduras.jpg"
+    },
+    {
+        "nombre": "Ensalada mixta",
+        "precio": 1500,
+        "imagen": "../media/menu/ensalada_mixta.jpg"
+    },
+    {
+        "nombre": "Ensalada Cesar",
+        "precio": 2100,
+        "imagen": "../media/menu/ensaladaCesar.jpg"
+    },
+    {
+        "nombre": "Omelette",
+        "precio": 1300,
+        "imagen": "../media/menu/omelette.jpg"
+    },
+    {
+        "nombre": "Pollo a la plancha con verduras",
+        "precio": 3600,
+        "imagen": "../media/menu/pollo_con_verduras.jpg"
+    },
+    {
+        "nombre": "Porción tarta de acelga",
+        "precio": 1000,
+        "imagen": "../media/menu/tartadeacelga.jpg"
+    }
+]

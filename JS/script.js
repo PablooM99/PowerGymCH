@@ -1,5 +1,7 @@
+// Manejador de eventos para el botón de navegación en dispositivos móviles
 document.getElementById('nav-toggle').addEventListener('click', function() {
     let navMenu = document.getElementById('nav-menu');
+    // Alternar la visibilidad del menú de navegación
     if (navMenu.style.display === "block") {
         navMenu.style.display = "none";
     } else {
@@ -7,40 +9,61 @@ document.getElementById('nav-toggle').addEventListener('click', function() {
     }
 });
 
+// Evento que se dispara cuando el contenido del DOM está completamente cargado
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     const toggleButton = document.getElementById('dark-mode-toggle');
     const currentTheme = localStorage.getItem('theme');
+
+    // Aplicar tema oscuro si está activado y cambiar el contenido del boton dependiendo del modo que este seleccionado
     if (currentTheme === 'dark') {
       body.classList.add('dark-mode');
+      toggleButton.textContent = 'Modo Claro';
+    } else {
+        body.classList.remove('dark-mode');
+        toggleButton.textContent = 'Modo Oscuro'
     }
-  
+
+    // Alternar entre tema oscuro y claro
     toggleButton.addEventListener('click', () => {
       body.classList.toggle('dark-mode');
-      localStorage.setItem('theme', body.classList.contains('dark-mode') ? 'dark' : 'light');
+      if (body.classList.contains('dark-mode')) {
+        toggleButton.textContent = 'Modo Claro'; // Cambiar a Modo Claro
+        localStorage.setItem('theme', 'dark');
+    } else {
+        toggleButton.textContent = 'Modo Oscuro'; // Cambiar a Modo Oscuro
+        localStorage.setItem('theme', 'light');
+    }
     });
 
+    // Botón del carrito y su funcionalidad
     const cartButton = document.querySelector('.shopping-cart button');
     cartButton.addEventListener('click', toggleCartModal);
 
+    // Botón para cerrar el modal del carrito
     const closeButton = document.querySelector('.close-btn');
     closeButton.addEventListener('click', toggleCartModal);
 
-    generateProductList();
+    // Cargar productos desde un archivo JSON y actualizar el contador del carrito
+    loadProducts();
     updateCartCount();
 });
 
-function generateProductList() {
-    const productos = [
-        { nombre: "Arroz con pescado y verduras", precio: 3500, imagen: "../media/menu/arrozconpescadoyverduras.jpg" },
-        { nombre: "Ensalada mixta", precio: 1500, imagen: "../media/menu/ensalada_mixta.jpg" },
-        { nombre: "Ensalada Cesar", precio: 2100, imagen: "../media/menu/ensaladaCesar.jpg" },
-        { nombre: "Omelette", precio: 1300, imagen: "../media/menu/omelette.jpg" },
-        { nombre: "Pollo a la plancha con verduras", precio: 3600, imagen: "../media/menu/pollo_con_verduras.jpg" },
-        { nombre: "Porción tarta de acelga", precio: 1000, imagen: "../media/menu/tartadeacelga.jpg" }
-    ];
+// Función asincrónica para cargar productos desde un archivo JSON
+async function loadProducts() {
+    try {
+        const response = await fetch('../productos.json');
+        const productos = await response.json();
+        generateProductList(productos);
+    } catch (error) {
+        console.error('Error al cargar los productos:', error);
+    }
+}
 
+// Generar lista de productos y mostrar en el DOM
+function generateProductList(productos) {
     const contenedorProductos = document.querySelector('.container-menu');
+    contenedorProductos.innerHTML = '';
     productos.forEach(producto => {
         const productoHTML = `
             <div>
@@ -54,6 +77,12 @@ function generateProductList() {
         contenedorProductos.innerHTML += productoHTML;
     });
 
+    // Añadir manejadores de eventos a los botones de agregar al carrito
+    addCartEventListeners();
+}
+
+// Añadir eventos a los botones de agregar al carrito
+function addCartEventListeners() {
     document.querySelectorAll('.add-to-cart').forEach(button => {
         button.addEventListener('click', () => {
             const name = button.getAttribute('data-name');
@@ -64,6 +93,7 @@ function generateProductList() {
     });
 }
 
+// Añadir ítems al carrito y guardar en localStorage
 function addItemToCart(name, price, quantity) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     const existingItemIndex = cart.findIndex(item => item.name === name);
@@ -77,18 +107,21 @@ function addItemToCart(name, price, quantity) {
     updateModalCartDetails();
 }
 
+// Actualizar el contador de ítems en el carrito
 function updateCartCount() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     const totalCount = cart.reduce((acc, item) => acc + item.quantity, 0);
     document.getElementById('cart-count').textContent = totalCount;
 }
 
+// Función para alternar la visibilidad del modal del carrito
 function toggleCartModal() {
     const modal = document.getElementById('cart-modal');
     modal.style.display = (modal.style.display === 'block' ? 'none' : 'block');
     updateModalCartDetails();
 }
 
+// Actualizar detalles del modal del carrito
 function updateModalCartDetails() {
     const modalItems = document.getElementById('modal-cart-items');
     const modalTotal = document.getElementById('modal-cart-total');
@@ -110,6 +143,7 @@ function updateModalCartDetails() {
     modalTotal.textContent = `$${total.toFixed(2)}`;
 }
 
+// Función para eliminar ítems del carrito
 function removeItemFromCart(index) {
     let cart = JSON.parse(localStorage.getItem('cart')) || [];
     cart.splice(index, 1);
@@ -118,6 +152,13 @@ function removeItemFromCart(index) {
     updateCartCount();
 }
 
+function clearCartStorage() {
+    // Elimina solo las claves relacionadas con el carrito de compras del localStorage
+    localStorage.removeItem('cart');
+    // Agregar más claves relacionados con el carrito
+}
+
+// Evento para el botón de realizar compra
 document.getElementById('checkout-button').addEventListener('click', function() {
     const cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length === 0) {
@@ -135,9 +176,9 @@ document.getElementById('checkout-button').addEventListener('click', function() 
             confirmButtonText: 'Cerrar'
         }).then((result) => {
             if (result.isConfirmed) {
-                localStorage.clear();
+                clearCartStorage();
                 updateCartCount();
-                toggleCartModal();
+                toggleCartModal();  // Cierra el modal después de la compra
             }
         });
     }
