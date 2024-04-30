@@ -32,6 +32,6 @@
     {
         "nombre": "Yogurt con frutas",
         "precio": 1200,
-        "imagen": "yogurt-con-frutas.jpg"
+        "imagen": "../media/menu/yogurt-con-frutas.jpg"
     }
 ]
