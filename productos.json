@@ -29,4 +29,9 @@
         "precio": 1000,
         "imagen": "../media/menu/tartadeacelga.jpg"
     }
+    {
+        "nombre": "Yogurt con frutas",
+        "precio": 1200,
+        "imagen": "yogurt-con-frutas.jpg"
+    }
 ]
